@@ -13,25 +13,28 @@
   --very-dark-blue: hsl(212, 21%, 14%);
   --dark-grayish-blue: hsl(228, 12%, 48%);
   --white: hsl(0, 0%, 100%);
+
+  --ff-fraunces: 'Fraunces', serif;
+  --ff-montserrat: 'Montserrat', sans-serif;
 }
 
 body {
   background-color: var(--cream);
   height: 100vh;
-  display: flex;
-  align-items: center;
+  display: grid;
+  place-content: center;
+  padding: 16px 32px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  margin: 0 auto;
   border-radius: 10px;
+  height: 500px;
 }
 
 .mobile-image {
-  width: 100%;
+  max-width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-bottom: -4px;
@@ -43,25 +46,31 @@ body {
 
 .text-container {
   background-color: var(--white);
-  padding: 20px;
+  padding: 26px;
+  display: grid;
+  gap: 16px;
 }
 
 .title {
-  font-family: 'Fraunces', serif;
+  font-family: var(--ff-fraunces);
   font-weight: 700;
+  line-height: 1;
 }
 
 .text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--ff-montserrat);
   font-weight: 500;
   color: var(--dark-grayish-blue);
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 8px;
+  letter-spacing: 6px;
 }
 
 .subtitle {
   color: var(--dark-grayish-blue);
+  font-family: var(--ff-montserrat);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .price-container {
@@ -72,29 +81,30 @@ body {
 
 .price-lg {
   color: var(--dark-cyan);
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
-  font-family: 'Fraunces', serif;
+  font-family: var(--ff-fraunces);
 }
 
 .price-sm {
   color: var(--dark-grayish-blue);
   font-size: 14px;
   text-decoration: line-through;
+  font-family: var(--ff-montserrat);
 }
 
 .btn {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   color: var(--white);
   background-color: var(--dark-cyan);
   border: none;
   border-radius: 6px;
-  padding: 12px 24px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  width: 100%;
+  padding: 12px;
+  font-family: var(--ff-montserrat);
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -102,11 +112,12 @@ body {
   background-color: var(--dark-cyan-dark);
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 600px) {
   .container {
     display: flex;
     flex-direction: row;
     height: 500px;
+    width: 600px;
   }
 
   .mobile-image {
@@ -115,12 +126,15 @@ body {
 
   .desktop-image {
     display: block;
-    max-width: 100%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
 
   .text-container {
     border-radius: 10px;
+  }
+
+  .btn {
+    padding: 6px;
   }
 }
