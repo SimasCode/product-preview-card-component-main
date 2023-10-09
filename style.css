@@ -1,0 +1,126 @@
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Fraunces', serif; */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --dark-cyan-dark: hsl(159, 33%, 20%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--cream);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.mobile-image {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: -4px;
+}
+
+.desktop-image {
+  display: none;
+}
+
+.text-container {
+  background-color: var(--white);
+  padding: 20px;
+}
+
+.title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+}
+
+.text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--dark-grayish-blue);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+
+.subtitle {
+  color: var(--dark-grayish-blue);
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.price-lg {
+  color: var(--dark-cyan);
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Fraunces', serif;
+}
+
+.price-sm {
+  color: var(--dark-grayish-blue);
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  color: var(--white);
+  background-color: var(--dark-cyan);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--dark-cyan-dark);
+}
+
+@media screen and (min-width: 767px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+  }
+
+  .mobile-image {
+    display: none;
+  }
+
+  .desktop-image {
+    display: block;
+    max-width: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .text-container {
+    border-radius: 10px;
+  }
+}
